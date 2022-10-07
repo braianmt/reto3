@@ -6,7 +6,9 @@
 package com.example.demo.Controlador;
 
 import com.example.demo.Modelo.Message;
+import com.example.demo.Modelo.Reservation;
 import com.example.demo.Servicio.MessageService;
+import com.example.demo.Servicio.ReservationService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,22 +28,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/Reservation")
 public class ReservationController {
           @Autowired
-    private MessageService messageService;
+    private ReservationService reservationService;
     
     @GetMapping("/all")
-    public List<Message> getAll(){
-        return messageService.getAll();
+    public List<Reservation> getAll(){
+        return reservationService.getAll();
     }
     
     @GetMapping("/{id}")
-    public Optional<Message> getMessage(@PathVariable("id") int id){
-        return messageService.getMessage(id);
+    public Optional<Reservation> getReservation(@PathVariable("id") int id){
+        return reservationService.getReservation(id);
     } 
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Message save (@RequestBody Message message){
-        return messageService.save(message);
+    public Reservation save (@RequestBody Reservation reservation){
+        return reservationService.save(reservation);
     }
 
 }
