@@ -36,9 +36,20 @@ public class Message {
     @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
-     
     public Integer getIdMessage() {
         return idMessage;
+    }
+
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
+    }
+
+    public String getMessageText() {
+        return messageText;
+    }
+
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
 
     public Tool getTool() {
@@ -57,19 +68,7 @@ public class Message {
         this.client = client;
     }
 
-    public void setIdMessage(Integer idMessage) {
-        this.idMessage = idMessage;
-    }
-
-    public String getMessageText() {
-        return messageText;
-    }
-
-    public void setMessageText(String messageText) {
-        this.messageText = messageText;
-    }
      
-     
-     
-     
+   
+  
 }
