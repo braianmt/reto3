@@ -44,7 +44,6 @@ public class Tool {
     @JsonIgnoreProperties({"tool","messages"})
     private List<Reservation> reservations;
 
-    
     public Integer getId() {
         return id;
     }
@@ -81,6 +80,10 @@ public class Tool {
         return description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Category getCategory() {
         return category;
     }
@@ -104,9 +107,4 @@ public class Tool {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    
 }

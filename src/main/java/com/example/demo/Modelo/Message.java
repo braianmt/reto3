@@ -21,12 +21,12 @@ import javax.persistence.Table;
 @Table(name = "message")
 
 public class Message {
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Integer idMessage;
      private String messageText;
 
-     @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "toolId")
     @JsonIgnoreProperties({"messages","reservations"})
     private Tool tool;
@@ -67,8 +67,6 @@ public class Message {
     public void setClient(Client client) {
         this.client = client;
     }
-
-     
-   
+    
   
 }

@@ -21,7 +21,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "client")
 public class Client {
-    @Id
+      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idClient;
     private String email;
@@ -92,5 +92,5 @@ public class Client {
     public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
-    
+   
 }

@@ -4,6 +4,7 @@
  */
 package com.example.demo.Modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -23,14 +24,14 @@ import javax.persistence.Table;
 @Table(name = "category")
 
 public class Category {
-    @Id
+   @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
-    
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIncludeProperties("category")
+
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
+    @JsonIgnoreProperties("category")
     private List<Tool> tools;
 
     public Integer getId() {
@@ -55,7 +56,7 @@ public class Category {
 
     public void setDescription(String description) {
         this.description = description;
-    }   
+    }
 
     public List<Tool> getTools() {
         return tools;
@@ -64,6 +65,4 @@ public class Category {
     public void setTools(List<Tool> tools) {
         this.tools = tools;
     }
-    
-    
 }
