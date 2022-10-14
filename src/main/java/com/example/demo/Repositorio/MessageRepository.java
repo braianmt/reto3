@@ -32,4 +32,9 @@ public class MessageRepository {
     public Message save(Message message){
         return extencionesCrud.save(message);
     }
+    
+     public void delete(Message message){
+        extencionesCrud.delete(message);
+    }
+    
 }

@@ -33,4 +33,8 @@ public class ClientRepository {
         return extencionesCrud.save(client);
     }
     
+    public void delete(Client client){
+        extencionesCrud.delete(client);
+    }
+    
 }
